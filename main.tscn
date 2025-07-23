@@ -1,4 +1,29 @@
-[gd_scene format=3 uid="uid://b1lo1a2rxsspe"]
+[gd_scene load_steps=2 format=3 uid="uid://b1lo1a2rxsspe"]
+
+[ext_resource type="Script" uid="uid://dukcgtdbjge2a" path="res://Main.cs" id="1_ig7tw"]
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_ig7tw")
 metadata/_edit_horizontal_guides_ = [204.0]
+
+[node name="Drawer" type="Window" parent="."]
+initial_position = 1
+
+[node name="switch_nest" type="CheckButton" parent="Drawer"]
+offset_left = 3.0
+offset_top = 10.0
+offset_right = 47.0
+offset_bottom = 34.0
+text = "nest
+"
+
+[node name="switch_glass" type="CheckButton" parent="Drawer"]
+offset_left = -2.0
+offset_top = 39.0
+offset_right = 85.0
+offset_bottom = 70.0
+text = "glass
+"
+
+[node name="Window" type="Window" parent="."]
+position = Vector2i(700, 274)
