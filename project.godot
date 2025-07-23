@@ -14,6 +14,10 @@ config/name="worm_farm"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[dotnet]
+
+project/assembly_name="worm_farm"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
