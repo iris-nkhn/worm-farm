@@ -1,15 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1lo1a2rxsspe"]
+[gd_scene load_steps=3 format=3 uid="uid://b1lo1a2rxsspe"]
 
-[ext_resource type="Script" uid="uid://dukcgtdbjge2a" path="res://Main.cs" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://r162lhlx32hi" path="res://drawer.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://quqk7qmwie7x" path="res://nest.gd" id="1_ig7tw"]
 
 [node name="main" type="Node2D"]
-script = ExtResource("1_ig7tw")
 metadata/_edit_horizontal_guides_ = [204.0]
 
-[node name="Drawer" type="Window" parent="."]
+[node name="drawer" type="Window" parent="."]
 initial_position = 1
+script = ExtResource("1_0xm2m")
 
-[node name="switch_nest" type="CheckButton" parent="Drawer"]
+[node name="nest" type="Window" parent="drawer"]
+position = Vector2i(700, 274)
+script = ExtResource("1_ig7tw")
+
+[node name="switch_nest" type="CheckButton" parent="drawer"]
 offset_left = 3.0
 offset_top = 10.0
 offset_right = 47.0
@@ -17,7 +22,7 @@ offset_bottom = 34.0
 text = "nest
 "
 
-[node name="switch_glass" type="CheckButton" parent="Drawer"]
+[node name="switch_glass" type="CheckButton" parent="drawer"]
 offset_left = -2.0
 offset_top = 39.0
 offset_right = 85.0
@@ -25,5 +30,4 @@ offset_bottom = 70.0
 text = "glass
 "
 
-[node name="Window" type="Window" parent="."]
-position = Vector2i(700, 274)
+[connection signal="toggled" from="drawer/switch_nest" to="drawer/nest" method="_on_switch_nest_toggled"]
